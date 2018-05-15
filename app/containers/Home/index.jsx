@@ -1,9 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import HomeHeader from '../../components/homeHeader/index'
+import HomeHeader from '../../components/HomeHeader/index'
 import {connect} from 'react-redux'
 
-import Swipe from '../../components/swipe/swipe'
+import Swipe from '../../components/Category/swipe'
 
 
 class Home extends React.Component {
