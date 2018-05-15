@@ -3,6 +3,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import HomeHeader from '../../components/homeHeader/index'
 import {connect} from 'react-redux'
 
+import Swipe from '../../components/swipe/swipe'
+
 
 class Home extends React.Component {
     constructor(props, context) {
@@ -14,6 +16,8 @@ class Home extends React.Component {
         return (
             <div>
                 <HomeHeader cityName={this.props.userInfo.cityName}/>
+                <Swipe/>
+
             </div>
         )
     }
