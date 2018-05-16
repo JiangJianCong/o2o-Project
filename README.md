@@ -13,3 +13,9 @@
 
 ***
 
+#### 获取广告数据
+> A-新增了mock模拟数据，具体看代码
+> A-新增了广告的subpage的组建，用于获取数据
+> A-fetch/home里面新增了home.js用fetch获取请求，获取数据。
+> A-在subpage里面新增Ad.jsx，最后在componentDidMount加载完之后把数据传给这个状态
+
