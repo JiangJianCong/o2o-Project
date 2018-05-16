@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import HomeHeader from '../../components/HomeHeader/index'
 import {connect} from 'react-redux'
 
-import Swipe from '../../components/Category/swipe'
+import Category from '../../components/Category/index'
 
 
 class Home extends React.Component {
@@ -16,7 +16,7 @@ class Home extends React.Component {
         return (
             <div>
                 <HomeHeader cityName={this.props.userInfo.cityName}/>
-                <Swipe/>
+                <Category/>
 
             </div>
         )
