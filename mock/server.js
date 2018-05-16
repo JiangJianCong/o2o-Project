@@ -6,7 +6,6 @@ var router = require('koa-router')();
 var homeAdData = require('./home/ad.js')
 router.get('/api/homead', function *(next) {
     console.log('首页 —— 广告（超值特惠）')
-
     this.body = homeAdData
 });
 

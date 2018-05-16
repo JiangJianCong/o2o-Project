@@ -8,14 +8,16 @@ class HomeAd extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
-        const data = this.props.data
         return (
-            <div>
-                <h1>超级特惠</h1>
-                <div>
-                    {data.map((item,index) => {
-                        return <div key={index}>
-                            {index}
+            <div id='home-ad'>
+                <h2>超级特惠</h2>
+                <div className='ad-container clear-fix'>
+
+                    {this.props.data.map((item,index) => {
+                        return <div key={index} className="ad-item float-left">
+                            <a href={item.link} target="_blank">
+                                <img src={item.img} alt={item.title}/>
+                            </a>
                         </div>
                     })}
                 </div>
