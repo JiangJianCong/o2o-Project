@@ -18,4 +18,4 @@
 > A-新增了广告的subpage的组建，用于获取数据
 > A-fetch/home里面新增了home.js用fetch获取请求，获取数据。
 > A-在subpage里面新增Ad.jsx，最后在componentDidMount加载完之后把数据传给这个状态
-
+> M-修改了广告模块的html和css
