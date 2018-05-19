@@ -47,3 +47,6 @@
 > M-修改List和Item的html代码和css代码，不是学习的重点
 
 ***
+
+> M-木偶组件里面的List更新，新增了page页码，新增isLoadingMore这个状态来判断是否加载更多
+>
