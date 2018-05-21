@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import * as userInfoActionsFromOtherFile from '../../actions/userinfo'
 import userinfo from "../../reducers/userinfo";
 import Header from '../../components/Header'
+import CurrentCity from '../../components/CurrentCity'
 
 class City extends React.Component {
     constructor(props, context) {
@@ -15,7 +16,7 @@ class City extends React.Component {
         return (
             <div>
                 <Header title="选择城市"/>
-                <h1>city</h1>
+                <CurrentCity cityName={this.props.userinfo.cityName}/>
             </div>
         )
     }
