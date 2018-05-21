@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as userInfoActionsFromOtherFile from '../../actions/userinfo'
 import userinfo from "../../reducers/userinfo";
+import Header from '../../components/Header'
 
 class City extends React.Component {
     constructor(props, context) {
@@ -13,6 +14,7 @@ class City extends React.Component {
     render() {
         return (
             <div>
+                <Header title="选择城市"/>
                 <h1>city</h1>
             </div>
         )
