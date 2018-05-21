@@ -1,5 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as userInfoActionsFromOtherFile from '../../actions/userinfo'
+import userinfo from "../../reducers/userinfo";
 
 class City extends React.Component {
     constructor(props, context) {
@@ -13,8 +17,25 @@ class City extends React.Component {
             </div>
         )
     }
+
+    componentDidMount(){
+        console.log(this.props.userinfo)
+        console.log(this.props.userInfoActions)
+    }
 }
 
-// 使用 require.ensure 异步加载，还不支持 ES6 的 export 
-// export default City
-module.exports = City
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userinfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(City)
