@@ -57,5 +57,12 @@
 
 ***
 > A-新增了一个Header组件，用于返回上一页
+>
+> A-新增显示redux里面城市的功能，在木偶组件已经获取数据，传向新建的CurrentCity即可
+***
 
+> A-新增了CityList的组件
+>
+> M-新增使用修改redux，把更换后的城市名放在localStorage里面，最后引入了react-router的hashHistory，使用hashHistory.push('/')来会到首页
+>
 ***
