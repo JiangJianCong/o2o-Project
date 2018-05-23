@@ -66,3 +66,6 @@
 > M-新增使用修改redux，把更换后的城市名放在localStorage里面，最后引入了react-router的hashHistory，使用hashHistory.push('/')来会到首页
 >
 ***
+> M-在轮播图内新增了Link标签，使其可以到达自己的的目的路由，同时，路由还包括了可选选项
+>
+>M-在头部的组件中，在state新增pwd，这是用来获取input的内容的，也就是监控input标签的变化，然后保存在state里，使用的时候可以直接从state里面读取，这样就避免每次读数据都操作一次dom，并且在input标签里面加入 value = {this.state.pwd} 来显示input的内容。
