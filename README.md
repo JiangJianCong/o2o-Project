@@ -68,4 +68,9 @@
 ***
 > M-在轮播图内新增了Link标签，使其可以到达自己的的目的路由，同时，路由还包括了可选选项
 >
->M-在头部的组件中，在state新增pwd，这是用来获取input的内容的，也就是监控input标签的变化，然后保存在state里，使用的时候可以直接从state里面读取，这样就避免每次读数据都操作一次dom，并且在input标签里面加入 value = {this.state.pwd} 来显示input的内容。
+> M-在头部的组件中，在state新增pwd，这是用来获取input的内容的，也就是监控input标签的变化，然后保存在state里，使用的时候可以直接从state里面读取，这样就避免每次读数据都操作一次dom，并且在input标签里面加入 value = {this.state.pwd} 来显示input的内容。
+>
+> A-新增了SearchInput组件，分离HomeHeader里面的input因为searchHeader也会使用到input，所以就分离出来，同样使用约束性来控制input，在HomeHeader里面传入一个value和一个enterHandle的方法来进行操作
+>
+> M-import了新建的SearchInput组件，把css文件放在import的最下面，规范编程。删除未分离时对input约束的代码。原来的input用SearchInput来代替
+> 
