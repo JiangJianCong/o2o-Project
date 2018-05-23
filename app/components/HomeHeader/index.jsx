@@ -1,8 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import './style.less'
 import { Link, hashHistory } from 'react-router'
+import SearchInput from '../SearchInput'
 
+import './style.less'
 
 class HoneHeader extends React.Component {
     constructor(props, context) {
@@ -30,15 +31,9 @@ class HoneHeader extends React.Component {
                 <div className='home-header-middle'>
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        <input
-                            className='search-value'
-                            type="text"
-                            placeholder='请输入关键字'
-                            onChange={this.changeHandle.bind(this)}
-                            onKeyUp={this.keyUpHandle.bind(this)}
-                            value={ this.state.pwd }
+                        &nbsp;
+                        <SearchInput value='' enterHandle={this.enterHandler.bind(this)}/>
 
-                        />
                     </div>
                 </div>
             </div>
@@ -46,27 +41,15 @@ class HoneHeader extends React.Component {
     }
 
     /**
-     * 实时更新state并且获取input的值
-     * @param e
+     * 点击回车的确认键
+     * @param value
      */
-    changeHandle(e) {
-        var val = e.target.value
-        this.setState({
-            pwd : val
-        })
+    enterHandler(value) {
+        hashHistory.push('/search/all/' + encodeURIComponent(value))
     }
 
-    /**
-     * 键盘上抬的时候判断是否回车搜索
-     * @param e
-     */
-    keyUpHandle(e) {
-        if (e.keyCode !== 13) {
-            return
-        }
-        hashHistory.push('/search/all/' + encodeURIComponent(this.state.pwd))
 
-    }
+
 }
 
 // export default NotFound
