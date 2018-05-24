@@ -74,3 +74,4 @@
 >
 > M-import了新建的SearchInput组件，把css文件放在import的最下面，规范编程。删除未分离时对input约束的代码。原来的input用SearchInput来代替
 > 
+> A-新建了一个SearchHeader的组件，是在搜索页里面的input标签，跟HomeHeader比较相似，不同的是需要一个默认的keyword，在containers/Search里面使用路由里面的params来读取url的信息，传到相应的组件去
