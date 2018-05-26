@@ -75,3 +75,12 @@
 > M-import了新建的SearchInput组件，把css文件放在import的最下面，规范编程。删除未分离时对input约束的代码。原来的input用SearchInput来代替
 > 
 > A-新建了一个SearchHeader的组件，是在搜索页里面的input标签，跟HomeHeader比较相似，不同的是需要一个默认的keyword，在containers/Search里面使用路由里面的params来读取url的信息，传到相应的组件去
+
+***
+> A - 新建了search里面的一个接口，用来获取搜索结果的一个方法暴露出来，给木偶组件调用
+>
+> M - mock模拟数据更改
+> 
+> A - 新增了搜索界面列表的木偶组件，跟首页猜我喜欢的功能类似
+  M-在Search里面添加新增的list
+
