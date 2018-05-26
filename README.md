@@ -83,4 +83,11 @@
 > 
 > A - 新增了搜索界面列表的木偶组件，跟首页猜我喜欢的功能类似
   M-在Search里面添加新增的list
-
+>  
+> A - fetch新增2个接口，用来获取json数据
+>
+> A - 在components里面新增了DetailInfo用来显示数据的，样式还没写
+>
+>  A - 在containers里面的木偶组件Detail新增subpage Info.jsx用于获取数据再传到component里面
+>
+>  M - 在里面新增了<Info/>标签
