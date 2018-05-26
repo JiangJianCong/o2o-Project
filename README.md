@@ -91,3 +91,7 @@
 >  A - 在containers里面的木偶组件Detail新增subpage Info.jsx用于获取数据再传到component里面
 >
 >  M - 在里面新增了<Info/>标签
+> 
+> A - 新增评论的小星星显示
+>
+> M - 修改详细信息的显示，并且加上样式
