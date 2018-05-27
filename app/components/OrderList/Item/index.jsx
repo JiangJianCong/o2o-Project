@@ -1,5 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { postComment } from "../../../fetch/user/orderList";
 
 import './style.less'
 
@@ -7,6 +8,9 @@ class Item extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+        this.state = {
+            commentState : 0
+        }
     }
     render() {
         const data = this.props.data;
@@ -20,7 +24,17 @@ class Item extends React.Component {
 
                     <div className="order-item-comment float-right">
 
-                        <button className="btn">评价</button>
+                        {
+                             this.state.commentState === 0
+                                 // 未评价
+                                 ? <button className="btn" onClick={this.showComment.bind(this)}>评价</button>
+                                 :
+                                 this.state.commentState === 1
+                                     // 评价中
+                                     ? ''
+                                     // 已经评价
+                                     : <button className="btn unseleted-btn">已评价</button>
+                         }
 
                     </div>
 
@@ -29,14 +43,67 @@ class Item extends React.Component {
                         <span>数量：{data.count}</span>
                         <span>价格：￥{data.price}</span>
                     </div>
+                    {
+                        // “评价中”才会显示输入框
+                        this.state.commentState === 1
+                            ? <div className="comment-text-container">
+                                <textarea style={{width: '100%', height: '80px'}} className="comment-text" ref="commentText"></textarea>
+                                <button className="btn" onClick={this.submitComment.bind(this)}>提交</button>
+                                &nbsp;
+                                <button className="btn unseleted-btn" onClick={this.hideComment.bind(this)} >取消</button>
+                            </div>
+                            : ''
+                    }
                 </div>
-
-
-
-
             </div>
         )
     }
+
+    componentDidMount() {
+        this.setState({
+            commentState: this.props.data.commentState
+        })
+    }
+
+    showComment() {
+        // 显示输入框
+        this.setState({
+            commentState: 1
+        })
+    }
+
+    submitComment() {
+        // 获取操作函数
+        const submitComment = this.props.submitComment;
+        // 获取id
+        const id = this.props.data.id;
+        // 获取评价内容
+        const commentText = this.refs.commentText;
+        const value = commentText.value.trim();
+        if (!value) {
+            return
+        }
+
+        // 执行数据提交
+        submitComment(id, value, res=> {
+
+            this.commentOk()
+        })
+    }
+
+    commentOk() {
+        // 已经评价，修改状态
+        this.setState({
+            commentState: 2
+        })
+    }
+    hideComment() {
+        // 隐藏输入框
+        this.setState({
+            commentState: 0
+        })
+    }
+
 }
 
 export default Item
