@@ -25,8 +25,10 @@ class HoneHeader extends React.Component {
                 </div>
 
                 <div className='home-header-right float-right'>
-                    <i className='icon-user'>
-                    </i>
+                    <Link to={`/Login`}>
+                        <i className='icon-user'>
+                        </i>
+                    </Link>
                 </div>
                 <div className='home-header-middle'>
                     <div className="search-container">
