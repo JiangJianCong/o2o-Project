@@ -119,3 +119,7 @@
 > M - 新增了Link路由
 >
 > A - 新增了Redux的一个过程，用来存储收藏
+>
+> A - 修改了Header里面的内容，新增一个backRouter的参数，登陆之后可以返回主页
+>
+> M - 在用户首页里面新增redux和react绑定，在<div>里面加入UserInfo组件和Header组件
