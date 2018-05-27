@@ -2,6 +2,8 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import Header from '../../components/Header'
 import UserInfo from '../../components/UserInfo'
+import OrderList from './subpage/OrderList'
+
 
 
 import { connect } from 'react-redux'
@@ -19,6 +21,7 @@ class User extends React.Component {
             <div>
                 <Header title={`用户中心`} backRouter={'/'} />
                 <UserInfo username={userinfo.username} city={userinfo.cityName} />
+                <OrderList username={userinfo.username}/>
 
             </div>
         )
